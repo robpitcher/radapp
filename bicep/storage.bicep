@@ -1,6 +1,6 @@
 @minLength(3)
 @maxLength(11)
-param storagePrefix string
+param storagePrefix string = 'cletusstg'
 
 @allowed([
   'Standard_LRS'
