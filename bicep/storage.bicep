@@ -1,7 +1,7 @@
 @minLength(3)
 @maxLength(11)
 param storagePrefix string = 'cletusstg'
-
+// testing ci triggerr
 @allowed([
   'Standard_LRS'
   'Standard_GRS'
