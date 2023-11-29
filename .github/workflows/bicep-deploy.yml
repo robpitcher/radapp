@@ -1,11 +1,14 @@
 ---
-on: [push]
+on:
+  push:
+    paths:
+      - "bicep/"
 name: Azure ARM
 
 permissions: read-all
 
 env:
-  RG_NAME: rg-radapp2
+  RG_NAME: radapp
   LOCATION: eastus
 
 jobs:
