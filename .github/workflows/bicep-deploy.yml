@@ -1,6 +1,9 @@
 ---
 on: [push]
 name: Azure ARM
+
+permissions: read-all
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -9,13 +12,13 @@ jobs:
       - uses: actions/checkout@main
 
         # Log into Azure
-      - uses: azure/login@v1
+      - uses: azure/login@4c88f01b0e3a5600e08a37889921afd060f75cf0
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
         # Deploy Bicep file
       - name: deploy
-        uses: azure/arm-deploy@v1
+        uses: azure/arm-deploy@65ae74fb7aec7c680c88ef456811f353adae4d06
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: rg-radapp
