@@ -2,7 +2,7 @@
 on:
   push:
     paths:
-      - "bicep/"
+      - "bicep/**"
 name: Azure ARM
 
 permissions: read-all
