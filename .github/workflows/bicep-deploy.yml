@@ -20,6 +20,6 @@ jobs:
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         resourceGroupName: rg-radapp
-        template: ./main.bicep
+        template: ./bicep/storage.bicep
         parameters: 'storagePrefix=clets storageSKU=Standard_LRS'
         failOnStdErr: false
