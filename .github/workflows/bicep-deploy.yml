@@ -1,0 +1,40 @@
+---
+on:
+  push:
+    paths:
+      - "bicep/**"
+name: Azure ARM
+
+permissions: read-all
+
+env:
+  RG_NAME: radapp
+  LOCATION: eastus
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout code
+      - uses: actions/checkout@main
+
+        # Log into Azure
+      - uses: azure/login@4c88f01b0e3a5600e08a37889921afd060f75cf0
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Azure CLI script
+        uses: azure/CLI@b0e31ae20280d899279f14c36e877b4c6916e2d3
+        with:
+          inlineScript: |
+            az group create -n $RG_NAME -l $LOCATION
+
+        # Deploy Bicep file
+      # - name: deploy
+      # uses: azure/arm-deploy@65ae74fb7aec7c680c88ef456811f353adae4d06
+      # with:
+      # subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+      # resourceGroupName: ${{ env.RG_NAME }}
+      # template: ./bicep/storage.bicep
+      # parameters: "storagePrefix=clets storageSKU=Standard_LRS"
+      # failOnStdErr: false
