@@ -36,5 +36,5 @@ jobs:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: ${{ env.RG_NAME }}
           template: ./bicep/aks.bicep
-          parameters: "sshRSAPublicKey=${{ secrets.AKSPUBKEY }}"
+          parameters: "sshRSAPublicKey='${{ secrets.AKSPUBKEY }}'"
           failOnStdErr: false
