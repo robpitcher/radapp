@@ -30,11 +30,11 @@ jobs:
             az group create -n $RG_NAME -l $LOCATION
 
         # Deploy Bicep file
-      # - name: deploy
-      # uses: azure/arm-deploy@65ae74fb7aec7c680c88ef456811f353adae4d06
-      # with:
-      # subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-      # resourceGroupName: ${{ env.RG_NAME }}
-      # template: ./bicep/storage.bicep
-      # parameters: "storagePrefix=clets storageSKU=Standard_LRS"
-      # failOnStdErr: false
+      - name: deploy
+        uses: azure/arm-deploy@65ae74fb7aec7c680c88ef456811f353adae4d06
+        with:
+          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+          resourceGroupName: ${{ env.RG_NAME }}
+          template: ./bicep/aks.bicep
+          parameters: "sshRSAPublicKey=${{ secrets.AKSPUBKEY }}"
+          failOnStdErr: false
