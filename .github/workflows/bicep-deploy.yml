@@ -5,7 +5,7 @@ name: Azure ARM
 permissions: read-all
 
 env:
-  RG_NAME: rg-radapp
+  RG_NAME: rg-radapp2
   LOCATION: eastus
 
 jobs:
@@ -31,7 +31,7 @@ jobs:
         uses: azure/arm-deploy@65ae74fb7aec7c680c88ef456811f353adae4d06
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-          resourceGroupName: $RG_NAME
+          resourceGroupName: ${{ env.RG_NAME }}
           template: ./bicep/storage.bicep
           parameters: "storagePrefix=clets storageSKU=Standard_LRS"
           failOnStdErr: false
