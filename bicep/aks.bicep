@@ -27,6 +27,7 @@ param linuxAdminUsername string = 'azureuser'
 param sshRSAPublicKey string
 
 resource aks 'Microsoft.ContainerService/managedClusters@2022-05-02-preview' = {
+  // Skip medium severity errors from using default settings
   // checkov:skip=CKV_AZURE_4:Devtest
   // checkov:skip=CKV_AZURE_7:Devtest
   // checkov:skip=CKV_AZURE_8:Devtest
