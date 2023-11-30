@@ -1,5 +1,6 @@
 # Radapp
-This was supposed to be a [Radius](https://radapp.io) learning exercise. It still is (mostly) a Radius learning exercise, but I also wanted to become more familiar with [Azure Bicep](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep), [MegaLinter](https://megalinter.io/latest/), and [Github Actions](https://docs.github.com/en/actions) in the process. Two birds, one stone and all that.
+This was supposed to be a [Radius](https://radapp.io) learning exercise. It still is (mostly) a Radius learning exercise, but I also wanted to become more familiar with
+[Azure Bicep](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep), [MegaLinter](https://megalinter.io/latest/), and [Github Actions](https://docs.github.com/en/actions) in the process. Two birds, one stone and all that.
 
 In addition to teaching myself the aforementioned items, a secondary goal for this repo is to provide a starting point for others that want to use the same technologies to setup and play around with Radius.
 
@@ -7,7 +8,7 @@ In addition to teaching myself the aforementioned items, a secondary goal for th
 1. Create a [service principal](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal), make the appropriate RBAC assignments, and make note of the Client ID and Client Secret value.
 2. In your Github repository, go to Settings > Secrets and variables > Actions > New repository secret and create a secret named `AZURE_CREDENTIALS`.
 3. Enter the value for the secret like shown below:
-```
+```json
 {
     "clientId": "<GUID>",
     "clientSecret": "<GUID>",
