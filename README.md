@@ -32,8 +32,8 @@ Megalinter *should* just work for you without any additional configuration. It's
 
 My original intent with Megalinter was to install it and run with default settings. I was setting up a brand new repo from scratch, can't be that bad right? Long story short, I made some changes. Below are the changes I made as well as the reasoning (at the time) for doing so.
 - Disabled KICS linter: It was between this or checkov. It got to a point where I was trying to suppress several warnings and I didn't want to have do the same thing multiple times for two different, but similar linters.
-- `REPOSITORY_CHECKOV_ARGUMENTS: --skip-framework arm`: This was just duplicating errors from the bicep linter, so I disabled it.
-- `APPLY_FIXES: none`: I use this as a learning opportunity.
+- `REPOSITORY_CHECKOV_ARGUMENTS: --skip-framework arm` This was just duplicating errors from the bicep linter, so I disabled it.
+- `APPLY_FIXES: none` I use this as a learning opportunity.
 
 ## Source Guides
 Useful for troubleshooting or additional info
