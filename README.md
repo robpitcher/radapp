@@ -28,7 +28,7 @@ In addition to teaching myself the aforementioned items, a secondary goal for th
 ## Megalinter Notes
 Megalinter *should* just work for you without any additional configuration. It's currently configured to run only on pull requests to main or master branches. Personally, I also run Megalinter locally while working on feature/fix branches because:
 1. It's much faster than waiting on the Github-hosted runners to repeatedly pull the Megalinter docker image on each Megalinter run
-2. By the time I go to PR the branch into main, I can go grab a snack and be confident that I'll come back to ✅ checks.
+2. By the time I go to PR the branch into main, I can go grab a snack and be confident that I'll come back to: ✅.
 
 My original intent with Megalinter was to install it and run with default settings. I was setting up a brand new repo from scratch, can't be that bad right? Long story short, I made some changes. Below are the changes I made as well as the reasoning (at the time) for doing so.
 - Disabled KICS linter: It was between this or checkov. It got to a point where I was trying to suppress several warnings and I didn't want to have do the same thing multiple times for two different, but similar linters.
