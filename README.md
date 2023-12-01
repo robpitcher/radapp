@@ -1,5 +1,8 @@
 # Radapp
-This was supposed to be a [Radius](https://radapp.io) learning exercise. It still is (mostly), however Radius runs in Kubernetes so there's a little bit of that in here too. For Kubernetes in this case, we'll be using Azure's Managed Kubernetes Service [AKS](https://learn.microsoft.com/en-us/azure/aks/). I also wanted to become more familiar with [Azure Bicep](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep), [MegaLinter](https://megalinter.io/latest/), and [Github Actions](https://docs.github.com/en/actions) in the process. So you'll see those in here too. Two birds, one stone and all that.
+This was supposed to be a [Radius](https://radapp.io) learning exercise. It still is (mostly), however Radius runs in Kubernetes so there's a little bit of that in here too.
+For Kubernetes in this case, we'll be using Azure's Managed Kubernetes Service [AKS](https://learn.microsoft.com/en-us/azure/aks/). I also wanted to become more familiar with
+[Azure Bicep](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep), [MegaLinter](https://megalinter.io/latest/), and
+[Github Actions](https://docs.github.com/en/actions) in the process. So you'll see those in here too. Two birds, one stone and all that.
 
 ## Prerequisites
 - A Github account
