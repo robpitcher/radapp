@@ -11,9 +11,9 @@ For Kubernetes in this case, we'll be using Azure's Managed Kubernetes Service [
 
 ## Installation
 ### CI/CD Setup
-1. Fork your own copy of this repo
+1. Clone or fork your own copy of this repo
 2. Create a [service principal](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal), make the appropriate RBAC assignments, and make note of the Client ID and Client Secret value.
-3. In your Github repo, go to Settings > Secrets and variables > Actions > New repository secret and create a secret named `AZURE_CREDENTIALS`.
+3. In your Github repo, go to **Settings > Secrets and variables > Actions > New repository secret** and create a secret named `AZURE_CREDENTIALS`.
 4. Enter the value for the secret like shown below:
 ```json
 {
@@ -27,7 +27,7 @@ For Kubernetes in this case, we'll be using Azure's Managed Kubernetes Service [
 6. Review the environment variables in `.github\workflows\bicep-deploy.yml` (lines 13-17) and adjust as desired.
 
 ### Kubernetes (AKS) Deployment
-7. Run the `Azure Bicep Deployment` workflow in Github Actions and verify it creates the resource group and AKS cluster as expected.
+7. Run the **Azure Bicep Deployment** workflow in Github Actions and verify it creates the resource group and AKS cluster as expected.
 8. Launch Powershell and run `Install-AzAksKubectl`. This will install the `kubectl` command for Kubernetes management.
 9. Login to Azure with `Connect-AzAccount` in Powershell.
 10. Run `Import-AzAksCredential` to easily configure `kubectl` for you and get you connected to your AKS cluster
@@ -41,6 +41,12 @@ aks-agentpool-10055697-vmss000000   Ready    agent   35h   v1.27.7
 aks-agentpool-10055697-vmss000001   Ready    agent   35h   v1.27.7
 aks-agentpool-10055697-vmss000002   Ready    agent   35h   v1.27.7
 ```
+
+### Install Radius
+12. Install the rad CLI for your specific platform [here](https://docs.radapp.io/installation/#step-1-install-the-rad-cli).
+13. Install the "Radius Bicep" VS Code extension. Note: to use this extension, you'll need to disable or uninstall the official Bicep VS code extension. Eventually the two Bicep extensions are going to be merged into one.
+14. Initialize a new environment with `rad init`.
+15. View the deployment by running either `kubectl get deployments -n radius-system` or `rad env list`.
 
 ## Megalinter Notes
 Megalinter *should* just work for you without any additional configuration. It's currently configured to run only on pull requests to main or master branches. Personally, I also run Megalinter locally while working on feature/fix branches because:
@@ -56,3 +62,4 @@ My original intent with Megalinter was to install it and run with default settin
 Useful for troubleshooting or additional info
 - [Quickstart: Deploy Bicep files by using GitHub Actions](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-github-actions?tabs=userlevel%2CCLI#generate-deployment-credentials)
 - [Quickstart: Deploy an Azure Kubernetes Service (AKS) cluster using Bicep](https://learn.microsoft.com/en-us/azure/aks/learn/quick-kubernetes-deploy-bicep?tabs=azure-cli)
+- [Radius Docs](https://docs.radapp.io)
