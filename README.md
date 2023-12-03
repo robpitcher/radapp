@@ -27,7 +27,7 @@ For Kubernetes in this case, we'll be using Azure's Managed Kubernetes Service [
 6. Review the environment variables in `.github\workflows\bicep-deploy.yml` (lines 13-17) and adjust as desired.
 
 ### Kubernetes (AKS) Deployment
-7. Run the **Azure Bicep Deployment** workflow in Github Actions and verify it creates the resource group and AKS cluster as expected.
+7. Run the **Azure Bicep Deployment** workflow in Github Actions using branch `main` and verify it creates the resource group and AKS cluster as expected.
 8. Launch Powershell and run `Install-AzAksKubectl`. This will install the `kubectl` command for Kubernetes management.
 9. Login to Azure with `Connect-AzAccount` in Powershell.
 10. Run `Import-AzAksCredential` to easily configure `kubectl` for you and get you connected to your AKS cluster
@@ -47,6 +47,7 @@ aks-agentpool-10055697-vmss000002   Ready    agent   35h   v1.27.7
 13. Install the "Radius Bicep" VS Code extension. Note: to use this extension, you'll need to disable or uninstall the official Bicep VS code extension. Eventually the two Bicep extensions are going to be merged into one.
 14. Initialize a new environment with `rad init`.
 15. View the deployment by running either `kubectl get deployments -n radius-system` or `rad env list`.
+16. Go thru the Radius tutorials [here](https://docs.radapp.io/tutorials/new-app/).
 
 ## Megalinter Notes
 Megalinter *should* just work for you without any additional configuration. It's currently configured to run only on pull requests to main or master branches. Personally, I also run Megalinter locally while working on feature/fix branches because:
