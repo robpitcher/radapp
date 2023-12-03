@@ -1,10 +1,6 @@
 ---
-on:
-  push:
-    branches:
-      - "main"
-    paths:
-      - "bicep/**"
+on: workflow_dispatch
+
 name: Azure Bicep Deployment
 
 permissions: read-all
